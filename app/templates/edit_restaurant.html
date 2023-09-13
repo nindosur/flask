@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{Title}}</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Редактировать ресторан</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.name.label }} {{ form.name(size=40) }}
+        </div>
+        <div>
+            {{ form.specialization.label }} {{ form.specialization(size=40) }}
+        </div>
+        <div>
+            {{ form.address.label }} {{ form.address(size=40) }}
+        </div>
+        <div>
+            {{ form.website.label }} {{ form.website(size=40) }}
+        </div>
+        <div>
+            {{ form.phone.label }} {{ form.phone(size=20) }}
+        </div>
+        <div>
+            <button type="submit">Сохранить</button>
+        </div>
+    </form>
+    <a href="{{ url_for('list_restaurants') }}">Назад к списку ресторанов</a>
+{% endblock %}
+
+</body>
+</html>

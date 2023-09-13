@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{Title}}</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Поиск ресторанов</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.specialization.label }} {{ form.specialization(size=40) }}
+        </div>
+        <div>
+            <button type="submit">Искать</button>
+        </div>
+    </form>
+    <h3>Результаты поиска</h3>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>{{ restaurant.name }} ({{ restaurant.specialization }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('list_restaurants') }}">Назад к списку ресторанов</a>
+{% endblock %}
+
+</body>
+</html>

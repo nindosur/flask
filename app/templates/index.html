@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{Title}}</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Добро пожаловать в "Рестораны города"!</p>
+    <p><a href="{{ url_for('list_restaurants') }}">Список ресторанов</a></p>
+    <p><a href="{{ url_for('search_restaurants') }}">Поиск ресторанов</a></p>
+{% endblock %}
+
+</body>
+</html>
